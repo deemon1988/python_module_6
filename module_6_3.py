@@ -55,18 +55,18 @@ class PoisonousAnimal(Animal):
 class Duckbill(Bird, PoisonousAnimal, AquaticAnimal):
     sound = "Click-click-click"
 
+if __name__ == '__main__':
+    animal = Animal(10)
+    db = Duckbill(10)
+    print(db.live)
+    print(db.beak)
 
-animal = Animal(10)
-db = Duckbill(10)
-print(db.live)
-print(db.beak)
+    db.speak()
+    db.attack()
 
-db.speak()
-db.attack()
+    db.move(1, 2, 3)
+    db.get_cords()
+    db.dive_in(6)
+    db.get_cords()
 
-db.move(1, 2, 3)
-db.get_cords()
-db.dive_in(6)
-db.get_cords()
-
-db.lay_eggs()
+    db.lay_eggs()
