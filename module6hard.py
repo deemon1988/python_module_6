@@ -6,9 +6,9 @@ import math
 class Figure:
     sides_count = 0
 
-    def __init__(self, __color, *__sides):
-        self.__sides = list(__sides)
-        self.__color = list(__color)
+    def __init__(self, color, *sides):
+        self.__sides = list(sides)
+        self.__color = list(color)
         self.filed = False
 
     def get_color(self):
@@ -46,8 +46,8 @@ class Figure:
 class Circle(Figure):
     sides_count = 1
 
-    def __init__(self, __color, *__sides):
-        super().__init__(__color, *__sides)
+    def __init__(self, color, *sides):
+        super().__init__(color, *sides)
         self.__radius = len(self.get_sides()) / 2 * math.pi
 
     def get_square(self):
@@ -57,12 +57,12 @@ class Circle(Figure):
 class Triangle(Figure):
     sides_count = 3
 
-    def __init__(self, __color, *__sides):
-        super().__init__(__color, *__sides)
-        if len(__sides) > 1 and len(__sides) != self.sides_count:
+    def __init__(self, color, *sides):
+        super().__init__(color, *sides)
+        if len(sides) > 1 and len(sides) != self.sides_count:
             self.__sides = [1] * self.sides_count
         else:
-            self.__sides = list(__sides) * self.sides_count
+            self.__sides = list(sides) * self.sides_count
 
     def get_sides(self):
         return self.__sides
@@ -77,12 +77,13 @@ class Triangle(Figure):
 class Cube(Figure):
     sides_count = 12
 
-    def __init__(self, __color, *__sides):
-        super().__init__(__color, *__sides)
-        if len(__sides) > 1 and len(__sides) != self.sides_count:
+    def __init__(self, color, *sides):
+        super().__init__(color, *sides)
+        if len(sides) > 1 and len(sides) != self.sides_count:
             self.__sides = [1] * self.sides_count
         else:
-            self.__sides = [side for side in list(__sides) if isinstance(side, int)] * self.sides_count
+            self.__sides = [side for side in list(sides) if isinstance(side, int)] * self.sides_count
+
 
     def get_sides(self):
         return self.__sides
@@ -107,7 +108,7 @@ if __name__ == '__main__':
     print(len(circle1))
     print(circle1.get_square())
 
-    cube1 = Cube((222, 35, 130), 6.3)
+    cube1 = Cube((222, 35, 130), 6)
     cube1.set_color(150.1, 70, 15)  # Не изменится
     print(cube1.get_color())
     # Проверка на изменение сторон:
@@ -115,3 +116,8 @@ if __name__ == '__main__':
     print(cube1.get_sides())
     # Проверка объёма (куба):
     print(cube1.get_volume())
+
+
+
+
+
