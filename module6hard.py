@@ -40,7 +40,6 @@ class Figure:
 
     def set_sides(self, *new_sides):
         if self.__is_valid_sides(new_sides):
-            # if len(new_sides) == self.sides_count and self.__is_valid_sides(new_sides):
             self.__sides = list(new_sides)
 
 
