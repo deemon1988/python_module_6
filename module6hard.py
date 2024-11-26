@@ -101,10 +101,8 @@ if __name__ == '__main__':
     print(triangle1.get_square())
 
     circle1 = Circle((200, 200, 100), 10)
-    print(circle1._Circle__radius)
     print(circle1.get_square())
     circle1.set_sides(15)
-    print(circle1._Circle__radius)
     print(circle1.get_square())
     print(circle1.get_color())
     circle1.set_color(55, 255, 77)
@@ -123,11 +121,7 @@ if __name__ == '__main__':
     # Проверка объёма (куба):
     print(cube1.get_volume())
 
-    print(sum(circle1._Figure__sides))
-
     print(circle1.get_sides())
     circle1.set_sides(15)
-    print(circle1._Circle__radius)
     circle1.set_sides(10)
-    print(circle1._Circle__radius)
     print(circle1.get_sides())
